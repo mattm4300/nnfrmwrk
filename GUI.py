@@ -4,6 +4,8 @@ from tkinter.ttk import *
 class Application(Frame):
 	def __init__(self, master):
 		Frame.__init__(self, master)
+		master.minsize(width = 100, height = 100)
+		master.maxsize(width = 500, height = 500)
 		self.grid()
 		self.createWidgets()
 		self.master = master
@@ -18,9 +20,16 @@ class Application(Frame):
 		self.filemenu.add_command(label="Exit", command=self.master.quit)
 		self.menubar.add_cascade(label = "File", menu = self.filemenu)
 
+		self.nnmenu = Menu(self.menubar, tearoff = 0)
+		self.nnmenu.add_command(label = "Import", command = self.say_hi)
+		self.nnmenu.add_command(label = "Export", command = self.say_hi)
+		self.nnmenu.add_separator()
+		self.nnmenu.add_command(label = "Close", command = self.say_hi)
+		self.menubar.add_cascade(label = "Network", menu = self.nnmenu)
+
 		self.master.config(menu = self.menubar)
 
-		self.lab = Label(self, text = "My first label").grid(row = 1)
+		self.lab = Label(self, text = "My first label").grid(row = 0)
 		self.e1 = Entry(self)
 		self.v = StringVar()
 		self.e1["textvariable"] = self.v
