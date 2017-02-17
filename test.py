@@ -6,6 +6,7 @@ Created on Thu Feb 16 20:33:18 2017
 """
 import sys
 import os
+import time, datetime
 
 from configloader import loadConfigs
 import logging
@@ -31,10 +32,12 @@ def setup():
 def main():
 	setup()
 	logging.info("Program started.")
+	starttime = time.time()
 	logging.debug("Starting GUI.")
 	GUI.GUI.mainloop()
 	logging.debug("GUI exited.")
 	logging.info("Program exiting.")
+	logging.info("Total runtime: {}".format(str(time.time() - starttime)))
 
 if __name__ == "__main__":
 	main()
