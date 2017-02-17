@@ -1,0 +1,10 @@
+{
+     "logging" : {
+          "filename" : "stdout",
+          "filemode" : "w",
+          "format"   : "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+          "datefmt"  : "%m/%d/%Y %I:%M:%S %p",
+          "level"    : 10,
+          "stream"   : null
+     }
+}
