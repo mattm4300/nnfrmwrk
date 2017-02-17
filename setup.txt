@@ -1,0 +1,17 @@
+Anaconda
+conda create -n nns python=3.5
+activate nns
+pip install tensorflow-gpu
+conda install scipy
+pip install keras hyperas
+pip install sklearn
+conda install h5py
+
+downloaded cuda 8.0 & installed
+downloaded cuDNN libraries & copied the files over according to:
+
+    The contents of C:\CuDNN\lib\x64\ would be copied to C:\CUDA\v7.0\lib\x64\
+    The contents of C:\CuDNN\include\ would be copied to C:\CUDA\v7.0\include\
+    The contents of C:\CuDNN\bin\ would be copied to C:\CUDA\v7.0\bin\
+
+good to go
