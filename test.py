@@ -15,41 +15,6 @@ from tkinter.ttk import *
 # TODO: Add command line arguments.  These will override written file
 #       instructions eventually.
 
-"""
-class Application(Frame):
-	def __init__(self, master=None):
-		Frame.__init__(self, master)
-		self.pack()
-		self.createWidgets()
-		self.master = master
-
-	def createWidgets(self):
-		self.hi_there = Button(self)
-		self.hi_there["text"] = "Hello World\n(click me)"
-		self.hi_there["command"] = self.say_hi
-		self.hi_there.pack(side="top")
-
-		self.entrything = Entry()
-		self.entrything.pack()
-
-		self.contents = StringVar()
-		self.contents.set("This is a variable.")
-
-		self.entrything["textvariable"] = self.contents
-
-		self.entrything.bind('<Key-Return>', self.print_contents)
-
-		self.quit = Button(self, text="QUIT",
-						command=self.master.destroy)
-		self.quit.pack(side="bottom")
-
-	def say_hi(self):
-		print("hi there, everyone!")
-
-	def print_contents(self, event):
-		print("hi, contents are ->", self.contents.get())
-"""
-
 class Application(Frame):
 	def __init__(self, master):
 		Frame.__init__(self, master)
