@@ -1,6 +1,14 @@
 from tkinter import *
 from tkinter.ttk import *
 
+class stdoutOverride(object):
+	def __init__(self, widget):
+		self.widget = widget
+
+	def write(self, string):
+		self.widget.insert(INSERT, string)
+		self.widget.see(END)
+
 class Application(Frame):
 	def __init__(self, master):
 		Frame.__init__(self, master)
@@ -36,6 +44,12 @@ class Application(Frame):
 		self.e1.bind("<Key-Return>", self.printstuff)
 		self.e1.grid(row = 2)
 
+		self.t = Text(self)
+		self.t.grid(row = 3, rowspan = 3, columnspan = 2)
+
+		global TEXTBOX
+		TEXTBOX = self.t
+
 	def say_hi(self):
 		print("hi")
 
@@ -44,3 +58,4 @@ class Application(Frame):
 
 root = Tk()
 GUI = Application(master = root)
+STREAM = stdoutOverride(TEXTBOX)

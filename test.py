@@ -15,8 +15,8 @@ import GUI
 # TODO: Add command line arguments.  These will override written file
 #       instructions eventually.
 
-
 def setup():
+	sys.stdout = GUI.STREAM
 	print("Running Setup... ", end="")
 	configs = loadConfigs("configs.json")
 	logging.basicConfig(
@@ -25,7 +25,7 @@ def setup():
 		format = configs["logging"]["format"],
 		datefmt = configs["logging"]["datefmt"],
 		level = configs["logging"]["level"],
-		stream = sys.stdout
+		stream = sys.__stdout__
 	)
 	print("Done.", end="\n")
 
@@ -34,7 +34,9 @@ def main():
 	logging.info("Program started.")
 	starttime = time.time()
 	logging.debug("Starting GUI.")
+
 	GUI.GUI.mainloop()
+
 	logging.debug("GUI exited.")
 	logging.info("Program exiting.")
 	logging.info("Total runtime: {}".format(str(time.time() - starttime)))

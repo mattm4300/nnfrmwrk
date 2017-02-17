@@ -1,0 +1,10 @@
+02/17/2017 12:40:31 AM - root - INFO - Program started.
+02/17/2017 12:40:31 AM - root - DEBUG - Starting GUI.
+02/17/2017 12:40:44 AM - root - DEBUG - GUI exited.
+02/17/2017 12:40:44 AM - root - INFO - Program exiting.
+02/17/2017 12:40:44 AM - root - INFO - Total runtime: 12.25624418258667
+02/17/2017 12:41:01 AM - root - INFO - Program started.
+02/17/2017 12:41:01 AM - root - DEBUG - Starting GUI.
+02/17/2017 12:41:22 AM - root - DEBUG - GUI exited.
+02/17/2017 12:41:22 AM - root - INFO - Program exiting.
+02/17/2017 12:41:22 AM - root - INFO - Total runtime: 21.320531845092773

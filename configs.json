@@ -1,7 +1,7 @@
 {
      "logging" : {
-          "filename" : "stdout",
-          "filemode" : "w",
+          "filename" : "log.txt",
+          "filemode" : "a",
           "format"   : "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
           "datefmt"  : "%m/%d/%Y %I:%M:%S %p",
           "level"    : 10,
