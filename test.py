@@ -16,7 +16,6 @@ import GUI
 #       instructions eventually.
 
 def setup():
-	sys.stdout = GUI.STREAM
 	print("Running Setup... ", end="")
 	configs = loadConfigs("configs.json")
 	logging.basicConfig(
@@ -34,9 +33,9 @@ def main():
 	logging.info("Program started.")
 	starttime = time.time()
 	logging.debug("Starting GUI.")
-
+	sys.stdout = GUI.STREAM
 	GUI.GUI.mainloop()
-
+	sys.stdout = sys.__stdout__
 	logging.debug("GUI exited.")
 	logging.info("Program exiting.")
 	logging.info("Total runtime: {}".format(str(time.time() - starttime)))

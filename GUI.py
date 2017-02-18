@@ -14,7 +14,7 @@ class Application(Frame):
 		Frame.__init__(self, master)
 		master.minsize(width = 100, height = 100)
 		master.maxsize(width = 500, height = 500)
-		self.grid()
+		self.pack()
 		self.createWidgets()
 		self.master = master
 
@@ -35,23 +35,30 @@ class Application(Frame):
 		self.nnmenu.add_command(label = "Close", command = self.say_hi)
 		self.menubar.add_cascade(label = "Network", menu = self.nnmenu)
 
+		self.helpmenu = Menu(self.menubar, tearoff = 0)
+		self.helpmenu.add_command(label = "About", command = self.say_hi)
+		self.menubar.add_cascade(label = "Help", menu = self.helpmenu)
+
 		self.master.config(menu = self.menubar)
 
-		self.lab = Label(self, text = "My first label").grid(row = 0)
+		self.lab = Label(self, text = "My first label").pack()
 		self.e1 = Entry(self)
 		self.v = StringVar()
 		self.e1["textvariable"] = self.v
 		self.e1.bind("<Key-Return>", self.printstuff)
-		self.e1.grid(row = 2)
+		self.e1.pack()
 
 		self.t = Text(self)
-		self.t.grid(row = 3, rowspan = 3, columnspan = 2)
+		self.t.pack(padx = 5, pady = 5)
 
 		global TEXTBOX
 		TEXTBOX = self.t
 
 	def say_hi(self):
 		print("hi")
+		import os
+		os.chdir("C:\\SPB_DATA\\")
+		os.system("python test3.py")
 
 	def printstuff(self, event):
 		print(self.v.get())
